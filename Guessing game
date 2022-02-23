@@ -1,4 +1,4 @@
-#Guessing game with 3 tries and. non-countable cheat code and an optional restart game button!
+#Guessing game with 3 tries and, non-countable cheat code and an optional restart game button!
 
 from random import randint
 restart = True
