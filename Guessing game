@@ -1,0 +1,37 @@
+#Guessing game with 3 tries and. non-countable cheat code and an optional restart game button!
+
+from random import randint
+restart = True
+
+while restart:
+    player_2 = randint(10, 30)
+
+    print('\nYou have 3 Guesses!\nYou Win, You Lose upto you!\nYou can Press -1 for Cheat mode!')
+    print()
+
+    not_guessed = True
+    guess_number = 1
+    while not_guessed:
+        if guess_number == 4:
+            break
+        player_1 = eval(input("Hi, Player 1 Kindly Enter Your Guess between (10,30): "))
+        if player_1 == -1:
+            print("You Entered a cheat code!",player_2)
+            guess_number -= 1
+        elif player_1 == player_2:
+            print("\nYou Guessed Correctly!\nCONGRATULATIONS!!!!!")
+            not_guessed = False
+        elif player_1 < player_2:
+            print("You Entered a Lower Number than the Guess\nEnter a Bigger Number!")
+        elif player_1 > player_2:
+            print("You Entered a Higher Number than the Guess\nEnter a Smaller Number!")
+        guess_number += 1
+    if not_guessed:
+        print("\nALL GUESSES USED!\nGAME OVER!!!\nCorrect Guess Was =",player_2,"\n\nYou Lost!")
+    play_again = input("\nType 'Yes' to Play Again or Any other Key to Exit: ")
+
+    if play_again != "Yes" and play_again != "yes":
+        restart = False
+
+    print()
+    print("\nThanks For Playing!!!")
